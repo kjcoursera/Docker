@@ -111,7 +111,7 @@ This will create a pipeline docker image and we can verify this by typing the fo
 
 
 
-#### Step 8: Copy the NIFTI fMRI images
+#### Step 8: Copy the fMRI NIFTI images
 
 Suppose we have the above mentioned scripts in the following path: /path/to/docker/flywheel_challenge. Now create  "input"  and "tpm" folder within the flywheel_challenge. Copy the fMRI images to the input folder. In the segmentation step, we need TPM images to find the gray matter. So copy the TPM.nii to tpm folder.
 
