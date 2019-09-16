@@ -40,9 +40,10 @@ RUN wget --progress=bar:force -P /opt https://www.fil.ion.ucl.ac.uk/spm/download
 RUN mkdir -p ./execute/specs
 COPY manifest.json ./execute/specs/manifest.json
 
+
 # Configure SPM entry point
 COPY run.sh spm_preproc_pipeline.m /opt/spm${SPM_VERSION}/
 RUN chmod +x /opt/spm${SPM_VERSION}/run.sh
-#COPY version /version
+
 
 ENTRYPOINT ["/opt/spm12/run.sh"]

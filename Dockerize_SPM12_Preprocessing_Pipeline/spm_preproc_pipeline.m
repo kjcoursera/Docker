@@ -1,5 +1,5 @@
 function spm_preproce_pipeline(data_path, anat, numpasses, voxelsize,smooth)
-#function spm_preproce_pipeline(a,anat)
+
 #data_path = ['./execute/input/'];
 
 %addpath /opt/spm12

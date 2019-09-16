@@ -17,4 +17,5 @@ realignment_flag=$(jq -r <$MANIFEST '''.config.realignment.id')
 deformation_flag=$(jq -r <$MANIFEST '''.config.deformation.id')
 smoothing_flag=$(jq -r <$MANIFEST '''.config.smoothing.id')
 
+#execute the command
 exec /opt/spm12/spm12 script /opt/spm12/spm_preproc_pipeline.m $INPUT_DIR $anat $realignment_flag $deformation_flag $smoothing_flag

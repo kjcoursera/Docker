@@ -1,5 +1,5 @@
 {
-"name": "spm_pipeline",
+"name": "spm_preprocessing_pipeline",
 "label": "SPM12",
 "description": "fMRI Preprocessing using SPM12.",
 "maintainer": "Michael Perry <lmperry@stanford.edu>",

@@ -1,2 +1,5 @@
+$ to build docker
 docker build . -t pipeline
+
+$ to run docker image
 docker run --rm -it -v /Users/kanchana/Documents/docker/flywheel_challenge3:/execute  pipeline
