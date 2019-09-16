@@ -16,7 +16,7 @@ Lets create a spm preprocessing pipeline in SPM12/MATLAB and see how we can run 
     3. JSON file -  to pass the parameters to the bash/shell script
     4. bash/shell script -  to run the pre processing within the docker image
 
-## Step 2: SPM script - simple preprocessing pipeline
+#### Step 2: SPM script - simple preprocessing pipeline
 Open Matlab and add SPM12 to your path. Lets first create a batch script to preprocess fMRI data using the batch GUI. We will add the follwoing steps.
 
             1. Realignment -  Correct Head motion
