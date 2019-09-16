@@ -73,11 +73,11 @@ Now we have installed MCR in a docker image, this will allow us to run our matla
 
 To run the functionSqaure matlab script, type the following command 
 
-        docker run --rm -it -v /path/to/functionSquare/for_testing:/execute matlab /execute/example
+        docker run --rm -it -v /path/to/example_spm_load_img/for_testing:/execute matlab /execute/example
 
 
 --rm  Automatically remove the container when it exits
--v  Mounting a volume. Here we are mapping the local folder /path/to/functionSquare/for_testing  to  "execute" folder in the docker image. 
+-v  Mounting a volume. Here we are mapping the local folder /path/to/example_spm_load_img/for_testing  to  "execute" folder in the docker image. 
 After mapping the input folder, we call the function "example". "execute" folder can be called by any name. The mean image will be written in  the mapped folder.
 
 
