@@ -1,4 +1,4 @@
-# Running SPM12 script in a Docker image - to load and write the image using SPM functions
+# Running a simple Matlab script in a Docker image
 
 ## What is Docker?
 Docker is a open source tool allowing to create, deploy and run applications in an environment or a container, without the need of creating a whole virtula operating system. More information about docker can be found in the below links
@@ -10,31 +10,22 @@ Lets create a simple function in matlab and see how we can run this function in 
 
 
 
-## Step 1: SPM script - To find a mean volume
-Open Matlab and add SPM12 to your path. Create a function to find a mean volume of given images
+## Step 1: Matlab script
+In matlab create a simple function, for example, finding the square of a number 
 
-#### To find mean volume
+#### To find a square of a number
         
-        function example()
-        nii = spm_select('FPList', './execute/','^T_boldrest.nii');
-        nvol = spm_vol(nii);
-
-        nvols=spm_read_vols(nvol);
-        meanvols = mean(nvols,4);
-        vo=nvol(1);
-        vo.fname = fullfile(fileparts(nii),['mean_' spm_str_manip(nvol(1).fname,'t')]);
-        vo.dt = [16 0];
-        spm_write_vol(vo,meanvols);
-        end
-
+        function output =functionSquare(input)
+        output = input.^2;
+        fileName  = ['./execute/dataWriteNew' num2str(input) '.mat'];
+        save(fileName,'output');
 
 #### Step 2: Creating a Stand alone application in matlab 
 
 A detailed description is given in the following link: 
 https://www.mathworks.com/help/compiler/create-and-install-a-standalone-application-from-matlab-code.html
 
-This will create multiple folders, the binary file we need is located inside for_testing folder. When creating a stand alone application, matlab includes  necessary scripts to run the function. In the above example, matlab will automatically add spm_select, spm_read_vols and spm_write_vol.
-If its a simple script with few functions to be called, we can follow the method described in this tutorial.  If you would like to run a preprocessing pipeline in SPM, where it need other toolboxes as well, please check my Dockerize_spm_preproc_pipeline section.
+This will create multiple folders, the binary file we need is located inside for_testing folder.
 
 #### Step 3: Install the Docker Destop App
 
@@ -73,12 +64,12 @@ Now we have installed MCR in a docker image, this will allow us to run our matla
 
 To run the functionSqaure matlab script, type the following command 
 
-        docker run --rm -it -v /path/to/example_spm_load_img/for_testing:/execute matlab /execute/example
+        docker run --rm -it -v /path/to/functionSquare:/execute matlab /execute/functionSquare 4
 
 
 --rm  Automatically remove the container when it exits
--v  Mounting a volume. Here we are mapping the local folder /path/to/example_spm_load_img/for_testing  to  "execute" folder in the docker image. 
-After mapping the input folder, we call the function "example". "execute" folder can be called by any name. The mean image will be written in  the mapped folder.
+-v  Mounting a volume. Here we are mapping the local folder /path/to/functionSquare  to  "execute" folder in the docker image. 
+After mapping the input folder, we call the function "functionSquare" with an argument. "execute" folder can be called by any name. Depending on the script, the output will written in  the mapped folder.
 
 
 
