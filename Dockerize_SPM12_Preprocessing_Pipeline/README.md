@@ -18,8 +18,8 @@ Let us create a SPM preprocessing pipeline in SPM12/MATLAB and see how we can ru
 
 #### Step 1: Files needed to run SPM preprocessing script using a Docker image
 
-    1. SPM preprocessing batch script         - created in matlab/spm12
-    2. Docker file 										        - to install Matlab compiler runtime and standalone SPM
+    1. SPM preprocessing batch script         - script to preprocess fMRI data
+    2. Docker file 			      - a text file comes with installation commands for matlab compiler ans SPM12
     3. JSON (JavaScript Object Notation) file - to configure parameters and pass it to the bash/shell script (This is more like a control file)
     4. bash/shell script                      - to get the configured parameters and to run the preprocessing within the Docker image
 
