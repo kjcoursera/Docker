@@ -1,7 +1,7 @@
 # Running SPM12 script in a Docker image - to load and write the image using SPM functions
 
 ## What is Docker?
-Docker is a open source tool allowing to create, deploy and run applications in an environment or a container, without the need of creating a whole virtula operating system. More information about dockercan be found in the below links
+Docker is a open source tool allowing to create, deploy and run applications in an environment or a container, without the need of creating a whole virtula operating system. More information about docker can be found in the below links
 
     https://opensource.com/resources/what-docker
     https://docs.docker.com/engine/docker-overview/
