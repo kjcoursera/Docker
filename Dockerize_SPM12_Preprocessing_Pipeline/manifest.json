@@ -1,0 +1,38 @@
+{
+"name": "spm_pipeline",
+"label": "SPM12",
+"description": "fMRI Preprocessing using SPM12.",
+"maintainer": "Michael Perry <lmperry@stanford.edu>",
+"author": "Wellcome Centre for Human Neuroimaging, UCL, UK.",
+"url": "https://www.fil.ion.ucl.ac.uk/spm/software/spm12/",
+"source": "https://github.com/scitran-apps/fslmerge",
+"license": "Apache-2.0",
+"version": "0.1.2",
+"custom": {
+"docker-image": "pipeline"
+    
+        },
+    "config": {
+     
+        "realignment": {
+            "description": "NumPasses: Register to First image(0) or Mean image(1).",
+            "default": 1,
+            "type": "boolean",
+            "id": "-s"
+          },
+          "deformation": {
+            "description": "Voxelsize: specify the voxel size of the deformation field to be produced.",
+            "default": 2,
+            "type": "number",
+            "id": "-g"
+          },
+          "smoothing": {
+            "description": "FWHM:Apply Smoothing to warped images.",
+            "default": 8,
+            "type": "number",
+            "id": "-g"
+          }
+      
+            }
+  
+}   
